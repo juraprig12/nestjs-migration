@@ -1,14 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 //import { ForeignKeyMetadata } from 'typeorm/metadata/ForeignKeyMetadata';
 
 @Entity('users')
 export class UserEntity {
   @PrimaryGeneratedColumn() id: number;
-  @Column() full_name: string;
-  @Column() account: string;
+  @Column() username: string;
   @Column() password: string;
+  @Column() ip: string;
   @Column() phone: number;
-  @Column() email: string;
   // @OneToMany(() => UserEntity_1, (source: UserEntity_1) => source.user_id, {
   //   onUpdate: 'CASCADE',
   //   onDelete: 'CASCADE',
@@ -16,20 +15,20 @@ export class UserEntity {
   // source: Array<UserEntity_1>
  };
 
- @Entity('source')
- export class UserEntity_1 {
-   @PrimaryGeneratedColumn() id: number;
-   @Column() link: string;
-   @Column() comment: string;
-   @Column() date: Date;
-   @Column() phone: number;
-   //@Column() user_id: number;
-   @ManyToOne(() => UserEntity, (users: UserEntity) => users.id, {
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
-  })
-  users: UserEntity
-}
+//  @Entity('source')
+//  export class UserEntity_1 {
+//    @PrimaryGeneratedColumn() id: number;
+//    @Column() link: string;
+//    @Column() comment: string;
+//    @Column() date: Date;
+//    @Column() phone: number;
+//    //@Column() user_id: number;
+//    @ManyToOne(() => UserEntity, (users: UserEntity) => users.id, {
+//     onUpdate: 'CASCADE',
+//     onDelete: 'CASCADE',
+//   })
+//   users: UserEntity
+// }
  
 // enum Gender {
 //   MALE,
