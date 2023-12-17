@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {MigrationInterface, QueryRunner} from "typeorm";
 
 export class createTableUserSource1673473823268 implements MigrationInterface {
